@@ -3,8 +3,8 @@ import { ref } from 'vue'
 import BaseSelect from '@/components/BaseSelect.vue'
 import BaseButton from '@/components/BaseButton.vue'
 import { TrashIcon } from '@heroicons/vue/24/outline'
-import { PERIOD_SELECT_OPTIONS, BUTTON_TYPE_DANGER } from '@/constants'
-import {isActivityValid, isUndefined} from "@/validators"
+import { BUTTON_TYPE_DANGER, PERIOD_SELECT_OPTIONS } from '@/constants'
+import { isActivityValid, isUndefined } from '@/validators'
 
 defineProps({
   activity: {
@@ -32,7 +32,7 @@ const secondsToComplete = ref(0)
     <div>
       <BaseSelect
         class="font-mono"
-        placeholder="h:mm"
+        placeholder="hh:mm"
         :selected="secondsToComplete"
         :options="PERIOD_SELECT_OPTIONS"
         @select="secondsToComplete = $event"
